@@ -1,0 +1,586 @@
+PS D:\STUDY MATERIAL\Web Development\GitDemo> git clone https://github.com/Akchatv1301/delta-demo.git
+Cloning into 'delta-demo'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (6/6), done.
+Resolving deltas: 100% (1/1), done.
+PS D:\STUDY MATERIAL\Web Development\GitDemo> ls
+
+
+    Directory: D:\STUDY MATERIAL\Web Development\GitDemo
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        04-09-2024     19:48                delta-demo
+
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo> cd delta-demo
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> ls
+
+
+    Directory: D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        04-09-2024     19:48             56 README.md
+
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> ls -a
+Get-ChildItem : Parameter cannot be processed because the parameter name 'a' is ambiguous. Possible matches include: -Attributes 
+-Directory -File -Hidden -ReadOnly -System.
+At line:1 char:4
++ ls -a
++    ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : AmbiguousParameter,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> ls -force
+
+
+    Directory: D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h--        04-09-2024     19:48                .git
+-a----        04-09-2024     19:48             56 README.md
+
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> touch index.html
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> touch style.css
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo>  git add .\index.html
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        style.css
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+        new file:   index.html
+        new file:   style.css
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> git commit -m "Added new files"
+[main 5804758] Added new files
+ 3 files changed, 13 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 style.css
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 554 bytes | 554.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Akchatv1301/delta-demo.git
+   947476d..5804758  main -> main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\delta-demo> cd ..
+PS D:\STUDY MATERIAL\Web Development\GitDemo> mkdir project2 
+
+
+    Directory: D:\STUDY MATERIAL\Web Development\GitDemo
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        04-09-2024     20:20                project2
+
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo> cd project2
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> ls -force
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git init
+Initialized empty Git repository in D:/STUDY MATERIAL/Web Development/GitDemo/project2/.git/
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> ls -force
+
+
+    Directory: D:\STUDY MATERIAL\Web Development\GitDemo\project2
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h--        04-09-2024     20:22                .git
+
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> ls -;a
+ls : Cannot find path 'D:\STUDY MATERIAL\Web Development\GitDemo\project2\-' because it does not exist.
+At line:1 char:1
++ ls -;a
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\STUDY MATERI...Demo\project2\-:String) [Get-ChildItem], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+a : The term 'a' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, 
+or if a path was included, verify that the path is correct and try again.
+At line:1 char:6
++ ls -;a
++      ~
+    + CategoryInfo          : ObjectNotFound: (a:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> ls -la
+Get-ChildItem : A parameter cannot be found that matches parameter name 'la'.
+At line:1 char:4
++ ls -la
++    ~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> touch index.html
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> touch README.md
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+        new file:   index.html
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "First Commit"
+[main (root-commit) 7c58c32] First Commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 index.html
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+nothing to commit, working tree clean
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2>  git push origin main
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git remote add origin https://github.com/Akchatv1301/project2.git
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2>  git remote -v
+origin  https://github.com/Akchatv1301/project2.git (fetch)
+origin  https://github.com/Akchatv1301/project2.git (push)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch
+* main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 311 bytes | 311.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Akchatv1301/project2.git
+ * [new branch]      main -> main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2>  git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "Add Name"
+[main ebb7d79] Add Name
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 350 bytes | 350.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Akchatv1301/project2.git
+   7c58c32..ebb7d79  main -> main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "Double Quotes added"
+[main a4784c3] Double Quotes added
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 329 bytes | 329.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Akchatv1301/project2.git
+   ebb7d79..a4784c3  main -> main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch
+* main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout -b feature
+Switched to a new branch 'feature'
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch
+* feature
+  main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout feature
+Switched to branch 'feature'
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout -b test   
+Switched to a new branch 'test'
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch -d test  
+error: cannot delete branch 'test' used by worktree at 'D:/STUDY MATERIAL/Web Development/GitDemo/project2'
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch -d test
+Deleted branch test (was a4784c3).
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch
+  feature
+* main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout feature
+Switched to branch 'feature'
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch feature
+nothing to commit, working tree clean
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> touch app.js
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "Feature added"
+[feature 6561cac] Feature added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 app.js
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch feature
+nothing to commit, working tree clean
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push
+Everything up-to-date
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout feature
+Switched to branch 'feature'
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push
+fatal: The current branch feature has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push --set-upstream origin feature
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 281 bytes | 281.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/Akchatv1301/project2/pull/new/feature
+remote:
+To https://github.com/Akchatv1301/project2.git
+ * [new branch]      feature -> feature
+branch 'feature' set up to track 'origin/feature'.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch feature
+Your branch is up to date with 'origin/feature'.
+
+nothing to commit, working tree clean
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch
+* feature
+  main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git diff main
+diff --git a/app.js b/app.js
+new file mode 100644
+index 0000000..e69de29
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git merge main
+Already up to date.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 894 bytes | 127.00 KiB/s, done.
+From https://github.com/Akchatv1301/project2
+ * branch            main       -> FETCH_HEAD
+   a4784c3..92609bf  main       -> origin/main
+Updating a4784c3..92609bf
+Fast-forward
+ app.js | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 app.js
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch
+  feature
+* main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git -am "Button added"
+unknown option: -am
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "Button Added"
+[main dc6345c] Button Added
+ 1 file changed, 1 insertion(+)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git checkout feature
+Switched to branch 'feature'
+Your branch is up to date with 'origin/feature'.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "Form Added"
+[feature b914119] Form Added
+ 1 file changed, 1 insertion(+)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git diff feature
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git diff main
+diff --git a/app.js b/app.js
+index 4f2120d..b52eaf6 100644
+--- a/app.js
++++ b/app.js
+@@ -1 +1 @@
+-// Add feature -> button
+\ No newline at end of file
++// Add feature -> form
+\ No newline at end of file
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git merge main
+Auto-merging app.js
+CONFLICT (content): Merge conflict in app.js
+Automatic merge failed; fix conflicts and then commit the result.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git merge main
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "Merge new features"
+[feature 36d4cd8] Merge new features
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 977 bytes | 195.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Akchatv1301/project2.git
+   6561cac..36d4cd8  feature -> feature
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2>  git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git diff feature
+diff --git a/app.js b/app.js
+index 6ac247d..4f2120d 100644
+--- a/app.js
++++ b/app.js
+@@ -1,5 +1 @@
+-
+-// Add feature -> form
+-
+-// Add feature -> button
+-
++// Add feature -> button
+\ No newline at end of file
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git merge feature
+Updating dc6345c..36d4cd8
+Fast-forward
+ app.js | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git -m "Merged branches"
+unknown option: -m
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push
+To https://github.com/Akchatv1301/project2.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Akchatv1301/project2.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -m "Merged branches"
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push 
+To https://github.com/Akchatv1301/project2.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Akchatv1301/project2.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 888 bytes | 444.00 KiB/s, done.
+From https://github.com/Akchatv1301/project2
+ * branch            main       -> FETCH_HEAD
+   92609bf..0e25ef2  main       -> origin/main
+Updating 36d4cd8..0e25ef2
+Fast-forward
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git push origin main
+Everything up-to-date
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git branch
+  feature
+* main
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git add .
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   app.js
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git reset app.js
+Unstaged changes after reset:
+M       app.js
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git -am "Commit Mistake"
+unknown option: -am
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]
+           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]
+           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git commit -am "Commit Mistake"
+[main 77f2ced] Commit Mistake
+ 1 file changed, 1 insertion(+)
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git reset HEAD~1
+Unstaged changes after reset:
+M       app.js
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git ststus
+git: 'ststus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git ststus
+git: 'ststus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git log
+commit 0e25ef25576843f62d59be376ee9c2305048aab6 (HEAD -> main, origin/main)
+Merge: 92609bf 36d4cd8
+Author: Akchatv1301 <124229691+Akchatv1301@users.noreply.github.com>
+Date:   Thu Sep 5 23:12:15 2024 +0530
+
+    Merge pull request #2 from Akchatv1301/feature
+
+    Feature
+
+commit 36d4cd81419cebdce1d2b037f1aa0114b3447e0a (origin/feature, feature)
+Merge: b914119 dc6345c
+Author: Akchatv1301 <b322006@iiit-bh.ac.in>
+Date:   Thu Sep 5 23:09:25 2024 +0530
+
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git reset 36d4cd81419cebdce1d2b037f1aa0114b3447e0a
+Unstaged changes after reset:
+M       app.js
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git status
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git reset --hard ^C
+PS D:\STUDY MATERIAL\Web Development\GitDemo\project2> git reset --hard 36d4cd81419cebdce1d2b037f1aa0114b3447e0a
+HEAD is now at 36d4cd8 Merge new features
